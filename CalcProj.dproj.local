@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/04/23 17:47:35.000.916,=C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/04/29 16:47:53.000.313,=C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/04/30 09:30:01.000.177,=C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/04/30 09:30:10.000.774,=C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2024/04/30 09:37:21.000.138,C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit2.pas=D:\Induction Training\Pascal Training\Calculator\ButtonPanel.pas</Transaction>
+    <Transaction>2024/04/30 09:37:21.000.138,C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit2.dfm=D:\Induction Training\Pascal Training\Calculator\ButtonPanel.dfm</Transaction>
+    <Transaction>2024/04/30 09:38:36.000.469,=C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2024/04/30 09:39:47.000.884,C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit3.pas=D:\Induction Training\Pascal Training\Calculator\DisplayPanel.pas</Transaction>
+    <Transaction>2024/04/30 09:39:47.000.884,C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit3.dfm=D:\Induction Training\Pascal Training\Calculator\DisplayPanel.dfm</Transaction>
+    <Transaction>2024/04/30 09:41:23.000.000,C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit1.dfm=D:\Induction Training\Pascal Training\Calculator\CalcForm.dfm</Transaction>
+    <Transaction>2024/04/30 09:41:23.000.000,C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit1.pas=D:\Induction Training\Pascal Training\Calculator\CalcForm.pas</Transaction>
+    <Transaction>2024/04/30 09:55:56.000.211,=C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/04/30 09:56:15.000.073,C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit1.pas=D:\Induction Training\Pascal Training\Calculator\CalcLogic.pas</Transaction>
+    <Transaction>2024/04/30 11:03:44.000.118,=C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/04/30 12:09:18.000.733,C:\Users\kolvina1\OneDrive - SCHWIND eye-tech-solutions GmbH\Dokumente\Embarcadero\Studio\Projects\Project1.dproj=D:\Induction Training\Pascal Training\Calculator\CalcProj.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
