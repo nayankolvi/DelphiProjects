@@ -4,7 +4,6 @@ object Buttons: TButtons
   Width = 486
   Height = 230
   TabOrder = 0
-  OnClick = ButtonClick
   object ButtonOne: TButton
     Left = 32
     Top = 32

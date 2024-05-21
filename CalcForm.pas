@@ -1,100 +1,91 @@
 unit CalcForm;
 
-{$R *.dfm}
-
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, System.Generics.Collections, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ButtonPanel, DisplayPanel, CalcLogic;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ButtonPanel, DisplayPanel, CalcLogic, Vcl.StdCtrls;
 
 type
-  TCalculator = class(TForm)
+  TCalculatorForm = class(TForm)
     Buttons: TButtons;
     Display: TDisplay;
 
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure OnButtonEvent(Sender: TObject);
 
   private
-    Data : TList<string>;
-    Logic: CalculatorLogic;
-
+    FData: TCalculator;
+    procedure ButtonsInput(Input: Char);
   public
-    { Public declarations }
     function StoreDataAndGetDisplayString(CurrentValue : Char) : string;
   end;
 
 var
-  Calculator: TCalculator;
+  CalculatorForm: TCalculatorForm;
 
 implementation
 
+{$R *.dfm}
 
 
 
-procedure TCalculator.FormCreate(Sender: TObject);
+
+procedure TCalculatorForm.FormCreate(Sender: TObject);
 begin
-   Data := TList<string>.Create;
-   CalculatorLogic.Create;
+   FData := TCalculator.Create;
+   Buttons.OnInput := ButtonsInput;
 end;
 
 
-procedure TCalculator.OnButtonEvent(Sender: TObject);
-var
-  newData : Char;
+procedure TCalculatorForm.FormDestroy(Sender: TObject);
 begin
-  // send button event
-  Buttons.ButtonClick(Sender);
-  // Store latest button data and display it on the screen
-  newData := Buttons.getLastClick;
+  FData.Free;
+end;
+
+procedure TCalculatorForm.ButtonsInput(Input: Char);
+begin
+  // Store latest button FData and display it on the screen
   // in case of clear
-  if newData = ' ' then
+  if Input = ' ' then
     begin
-      Data.Clear;
-      Display.SetDisplayText('');
+      FData.Clear;
+      Display.DisplayText := '';
     end
   // in case of operantion and operands
-  else if newData <> '=' then
-    Display.SetDisplayText(StoreDataAndGetDisplayString(newData))
+  else if Input <> '=' then
+    Display.DisplayText := StoreDataAndGetDisplayString(Input)
   // in case of calculation
   else
-    Display.SetDisplayText(Logic.CalculateResult(Data));
+    Display.DisplayText := FData.CalculateResult;
 end;
 
 
-procedure TCalculator.FormDestroy(Sender: TObject);
-begin
-  Data.Destroy;
-end;
-
-
-function TCalculator.StoreDataAndGetDisplayString(CurrentValue : Char) : string;
+function TCalculatorForm.StoreDataAndGetDisplayString(CurrentValue : Char) : string;
 var
   OperationArray : string;
 begin
   OperationArray :=  '+*-/';
 
-  // when first data is being added to the operator and operation list
-  if Data.Count = 0 then
+  // when first FData is being added to the operator and operation list
+  if FData.Count = 0 then
   begin
-    Data.Add(CurrentValue);
+    FData.Add(CurrentValue);
     Result := CurrentValue;
   end
   // add digits next to each other for multiple entries and seperate the operations
   else if OperationArray.Contains(CurrentValue) then
   begin
     // add new operation
-    Data.Add(CurrentValue);
-    Result := Display.GetDisplayText + ' ' + CurrentValue + ' ';
+    FData.Add(CurrentValue);
+    Result := Display.DisplayText + ' ' + CurrentValue + ' ';
     // create new numerical slot
-    Data.Add('');
+    FData.Add('');
   end
   else
   begin
-    Data[Data.Count - 1] := Data[Data.Count - 1] + CurrentValue;
-    Result := Display.GetDisplayText + CurrentValue;
+    FData[FData.Count - 1] := FData[FData.Count - 1] + CurrentValue;
+    Result := Display.DisplayText + CurrentValue;
   end;
 end;
 

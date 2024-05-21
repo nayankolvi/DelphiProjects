@@ -124,7 +124,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="CalcForm.pas">
-            <Form>Calculator</Form>
+            <Form>CalculatorForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="ButtonPanel.pas">
@@ -1121,6 +1121,11 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
+            <DelphiInfo>
+                <IDEVersion NAME="Delphi 12.1 Athens" VERSION="36.1" SKU="52" TRIAL="0">
+                    <PLATFORMS>Win64,Win64x,Win32</PLATFORMS>
+                </IDEVersion>
+            </DelphiInfo>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

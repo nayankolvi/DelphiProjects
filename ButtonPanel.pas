@@ -3,10 +3,11 @@ unit ButtonPanel;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
-  System.Generics.Collections;
+  Vcl.Forms, Vcl.StdCtrls, Vcl.Controls;
+
+type
+  TInputEvent = procedure(Input: Char) of object;
 
 type
   TButtons = class(TFrame)
@@ -27,16 +28,12 @@ type
     ButtonEqu: TButton;
     ButtonDiv: TButton;
     procedure ButtonClick(Sender: TObject);
-
-
   private
-    { Private declarations }
-    lastClicked: char;
-
+    FOnInput: TInputEvent;
+  protected
+    procedure DoInput(Input: Char);
   public
-    { Public declarations }
-    function getLastClick(): char;
-
+    property OnInput: TInputEvent read FOnInput write FOnInput;
   end;
 
 implementation
@@ -44,44 +41,47 @@ implementation
 {$R *.dfm}
 
 procedure TButtons.ButtonClick(Sender: TObject);
+var
+  Ch: Char;
 begin
   if Sender = ButtonOne then
-    lastClicked := '1'
+    Ch := '1'
   else if Sender = ButtonTwo then
-    lastClicked := '2'
+    Ch := '2'
   else if Sender = ButtonThree then
-    lastClicked := '3'
+    Ch := '3'
   else if Sender = ButtonFour then
-    lastClicked := '4'
+    Ch := '4'
   else if Sender = ButtonFive then
-    lastClicked := '5'
+    Ch := '5'
   else if Sender = ButtonSix then
-    lastClicked := '6'
+    Ch := '6'
   else if Sender = ButtonSeven then
-    lastClicked := '7'
+    Ch := '7'
   else if Sender = ButtonEight then
-    lastClicked := '8'
+    Ch := '8'
   else if Sender = ButtonNine then
-    lastClicked := '9'
+    Ch := '9'
   else if Sender = ButtonZero then
-    lastClicked := '0'
+    Ch := '0'
   else if Sender = ButtonPlus then
-    lastClicked := '+'
+    Ch := '+'
   else if Sender = ButtonMinus then
-    lastClicked := '-'
+    Ch := '-'
   else if Sender = ButtonMul then
-    lastClicked := '*'
+    Ch := '*'
   else if Sender = ButtonDiv then
-    lastClicked := '/'
+    Ch := '/'
   else if Sender = ButtonEqu then
-    lastClicked := '='
+    Ch := '='
   else
-    lastClicked := ' ';
+    Ch := ' ';
+  DoInput(Ch);
 end;
 
-function TButtons.getLastClick(): char;
+procedure TButtons.DoInput(Input: Char);
 begin
-  result := lastClicked;
+  if Assigned(FOnInput) then FOnInput(Input);
 end;
 
 end.
